@@ -1,0 +1,134 @@
+body {
+	margin: 0;
+}
+
+h1 {
+	position	: top;
+	top		: 10px;
+	left		: 0;
+	width		: 100%;
+	height: 5vh;
+	color			: white;
+	font			: bold 24px/45px Helvetica, Sans-Serif;
+	letter-spacing		: -1px;
+	background		: rgb(0, 0, 0);
+	background		: rgba(0, 0, 0, 0.7);
+	padding			: 0px;
+	margin: 0;
+}
+.iceberg {
+	height: 95vh;
+	background-image: url(https://avatars.mds.yandex.net/get-pdb/1766868/bc41d8e2-4b4b-4c15-8863-12de03edf69a/s1200);
+	background-size: cover;
+	position: relative;
+}
+
+@keyframes toggle {
+	0% {
+		opacity: 0;
+	}
+
+	20% {
+		opacity: 1;
+	}
+
+    80% {
+	    z-index: -1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes fade {
+	0% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes hide {
+	100% {
+		z-index: -1;
+	}
+}
+
+label {
+	position: absolute;
+}
+
+input[type="checkbox"] {
+	position: absolute;
+	left: -99999px;
+	visibility: hidden;
+}
+
+.fas {
+	color: red;
+	font-size: 30px;
+}
+
+.comet1 {
+	left: 77vw;
+	top: 79vh;
+	animation: toggle 5s linear 1s 1 both;
+}
+
+.comet2 {
+	left: 57vw;
+	top: 65vh;
+	animation: toggle 5s linear 2s 1 both;
+}
+
+.comet3 {
+	left: 44vw;
+	top: 74vh;
+	animation: toggle 5s linear 3s 1 both;
+}
+
+.comet4 {
+	left: 5vw;
+	top: 34vh;
+	animation: toggle 5s linear 4s 1 both;
+}
+
+.comet5 {
+	left: 86vw;
+	top: 52vh;
+	animation: toggle 5s linear 5s 1 both;
+}
+
+.comet6 {
+	left: 41vw;
+	top: 9vh;
+	animation: toggle 5s linear 6s 1 both;
+}
+
+input[type="checkbox"]:checked + label .fas {
+	color: white;
+	animation: fade 1s linear 0s 1 both;
+}
+
+input[type="checkbox"]:checked + label {
+	animation: hide 1s linear 2s 1 both;
+}
+
+input[type="checkbox"]:checked {
+	counter-increment: score;
+}
+
+.count:after {
+	content: counter(score);
+	position: absolute;
+	left: 90%;
+	color: white;
+	bottom: 16px;
+	font-size: 22px;
+	border-style: double;
+	border-color: blue;
+	padding-left: 25px;
+	padding-right: 25px;
+}
